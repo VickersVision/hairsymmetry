@@ -7,11 +7,9 @@ export function Header() {
     </div>
     <header class="header">
       <div class="container header-wrapper">
-        <a href="/" class="logo">Hair Symmetry</a>
-        <nav>
-          <ul class="nav-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/about-our-story">About Us</a></li>
+        <a href="/" class="logo">
+          <img src="/logo.png" alt="Hair Symmetry Logo" style="height: 60px; width: auto;" />
+        </a>
             <li><a href="/services">Services</a></li>
             <li><a href="/the-team">The Team</a></li>
             <li><a href="/shop">Shop</a></li>

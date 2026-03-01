@@ -340,6 +340,10 @@ select.form-control {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1440px;
+  /* Expands the header width significantly */
+  margin: 0 auto;
+  padding: 0 var(--sp-4);
 }
 
 .logo {
@@ -352,7 +356,8 @@ select.form-control {
 
 .nav-links {
   display: flex;
-  gap: var(--sp-4);
+  gap: 2rem;
+  /* Wider spread between links */
   align-items: center;
 }
 
@@ -360,6 +365,7 @@ select.form-control {
   font-size: 0.95rem;
   font-weight: 500;
   position: relative;
+  white-space: nowrap;
 }
 
 .nav-links a::after {
@@ -616,6 +622,7 @@ select.form-control {
 
 .scroller-track {
   display: flex;
+  align-items: stretch;
   gap: var(--sp-4);
   width: max-content;
   animation: scrollLeft 40s linear infinite;
@@ -628,6 +635,12 @@ select.form-control {
 .scroller-item {
   width: 350px;
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.scroller-item>* {
+  flex: 1 1 auto;
 }
 
 @keyframes scrollLeft {

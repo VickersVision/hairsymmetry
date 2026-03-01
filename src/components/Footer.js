@@ -53,6 +53,7 @@ export function Footer() {
             <li><a href="/services">All Services</a></li>
             <li><a href="/the-team">Meet the Team</a></li>
             <li><a href="/blog">Beauty Blog</a></li>
+            <li><a href="/salon-careers">Careers</a></li>
             <li><a href="/donate-hair" style="color: var(--c-sage); font-weight: bold;">Donate Hair 💛</a></li>
           </ul>
         </div>

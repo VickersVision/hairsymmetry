@@ -110,6 +110,21 @@ export function BlogPostPage({ slug }) {
                 </div>
                 ` : ''}
 
+                <!-- Salon Location & Local SEO Block -->
+                <div class="container" style="max-width: 800px; margin-bottom: 5rem; padding-top: 3rem; border-top: 1px solid var(--c-border);">
+                    <div class="grid grid-2" style="gap: 2rem; align-items: start;">
+                        <div>
+                            <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--c-charcoal);">Visit Hair Symmetry</h3>
+                            <p style="margin-bottom: 0.5rem; color: #555;"><strong>Address:</strong><br>10441 Perry Hwy<br>Wexford, PA 15090</p>
+                            <p style="margin-bottom: 1.5rem; color: #555;"><strong>Phone:</strong><br><a href="tel:+17249354450" style="color: var(--c-sage); text-decoration: none; font-weight: bold;">(724) 935-4450</a></p>
+                            <p style="font-size: 0.95rem; color: #777; line-height: 1.6;">Hair Symmetry is Wexford’s premier destination for luxury color, precision cuts, and rejuvenating spa services. Located conveniently on Perry Highway, our experienced team provides unparalleled artistry in a relaxing, family-like atmosphere.</p>
+                        </div>
+                        <div style="border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-sm); height: 250px;">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3027.6006456075677!2d-80.0573983234914!3d40.63870834208035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88348a2ba8aa650b%3A0xea2dc5a7065fc711!2sHair%20Symmetry!5e0!3m2!1sen!2sus!4v1714400000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Stylist Recommendation Funnel (always visible) -->
                 <div style="background: #f7f7f5; padding: 5rem 1rem; margin-bottom: 0;">
                     <div class="container" style="max-width: 1000px;">

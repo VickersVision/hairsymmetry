@@ -10,6 +10,7 @@ import { IndividualServicePage } from './pages/IndividualServicePage.js';
 import { AboutPage } from './pages/AboutPage.js';
 import { ContactPage } from './pages/ContactPage.js';
 import { DonateHairPage } from './pages/DonateHairPage.js';
+import { SalonCareersPage } from './pages/SalonCareersPage.js';
 
 const routes = {
     '/': HomePage,
@@ -21,6 +22,7 @@ const routes = {
     '/about-our-story': AboutPage,
     '/about': AboutPage,  // alias — both /about and /about-our-story work
     '/contact': ContactPage,
+    '/salon-careers': SalonCareersPage,
     '/donate-hair': DonateHairPage,
     '/policies-faq': () => `
         <div class="section container" style="max-width: 800px; padding: 5rem 1rem;">

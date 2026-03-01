@@ -82,14 +82,50 @@ export function StylistPage({ slug }) {
       </section>
 
 
-      <!-- 3. Final CTA -->
-      <section class="section container text-center">
+      <!-- 3. Final CTA / Funnel -->
+      <section class="section container text-center" style="padding-top: 0;">
         <h2>Ready for a change?</h2>
         <a href="/book" class="btn btn-primary mt-4" style="margin-top: var(--sp-4);">Reserve ${stylistData.name}'s Next Opening</a>
-        <div style="margin-top: 1rem; font-size: 0.9rem; color: var(--c-charcoal);">
+        <div style="margin-top: 1rem; margin-bottom: 4rem; font-size: 0.9rem; color: var(--c-charcoal);">
             Or call the salon directly at <a href="tel:+17249354450" style="color: var(--c-sage); font-weight: bold; text-decoration: none;">(724) 935-4450</a> to request ${stylistData.name}.
         </div>
       </section>
+
+      <!-- 4. Stylist Dedicated Review CTA -->
+      <section class="container" style="margin-bottom: 6rem;">
+        <div style="background: white; border: 1px solid var(--c-border); padding: 2.5rem 3rem; border-radius: var(--radius-lg); text-align: center; box-shadow: var(--shadow-sm); max-width: 800px; margin: 0 auto;">
+          <h3 style="color: var(--c-charcoal); margin-bottom: 0.5rem; font-size: 1.6rem;">Did ${stylistData.name} do an amazing job?</h3>
+          <p style="color: #666; margin: 0 auto 1.5rem; max-width: 500px; font-size: 1rem;">Help ${stylistData.name} build their portfolio by leaving a 5-star review on Google!</p>
+          <button onclick="document.getElementById('stylist-review-modal').style.display='flex'" class="btn" style="background: #4285F4; color: white; border: none; font-weight: bold; padding: 1rem 2rem; border-radius: 50px; cursor: pointer; font-size: 1.1rem; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">⭐ Review ${stylistData.name}</button>
+        </div>
+      </section>
+
+      <!-- Dynamic Review Modal for Specific Stylist -->
+      <div id="stylist-review-modal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 9999; align-items: center; justify-content: center; backdrop-filter: blur(4px);">
+          <div style="background: white; border-radius: 16px; padding: 2.5rem; max-width: 450px; width: 90%; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.2); position: relative;">
+              <button onclick="document.getElementById('stylist-review-modal').style.display='none'" style="position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #888;">&times;</button>
+              
+              <div style="width: 70px; height: 70px; border-radius: 50%; overflow: hidden; margin: 0 auto 1rem; border: 3px solid var(--c-sage-light);">
+                 <img src="${stylistData.img}" alt="${stylistData.name}" style="width: 100%; height: 100%; object-fit: cover;" />
+              </div>
+
+              <h3 style="margin-bottom: 0.5rem; color: var(--c-charcoal);">Review ${stylistData.name}</h3>
+              <p style="color: #666; font-size: 0.95rem; margin-bottom: 1.5rem;">Your review makes a massive difference in an artist's career.</p>
+              
+              <div style="background: #fdfbf7; padding: 1rem; border-radius: 12px; margin-bottom: 1.5rem; border: 1px dashed var(--c-sage);">
+                  <p style="font-weight: bold; color: var(--c-sage); margin: 0 0 0.5rem 0; font-size: 1.05rem;">Pro-Tip for your Review:</p>
+                  <p style="font-size: 0.85rem; color: #555; margin: 0;">Be sure to mention <strong style="color:var(--c-charcoal);">${stylistData.name}</strong> and the <strong style="color:var(--c-charcoal);">Specific Service</strong> you received in the review (like "Balayage") to help their ranking!</p>
+              </div>
+
+              <div style="background: #f8f9fa; padding: 1rem; border-radius: 12px; margin-bottom: 1.5rem; display: inline-block;">
+                  <!-- QR code targeting Google Review -->
+                  <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://g.page/r/HairSymmetryWexford/review" alt="Scan to Review ${stylistData.name}" style="width: 150px; height: 150px; display: block; margin: 0 auto; border-radius: 8px; border: 1px solid #ddd;" />
+                  <span style="font-size: 0.8rem; color: #888; display: block; margin-top: 0.5rem; font-weight: 500;">Scan to open on phone</span>
+              </div>
+
+              <a href="https://g.page/r/HairSymmetryWexford/review" target="_blank" onclick="document.getElementById('stylist-review-modal').style.display='none'" class="btn" style="display: block; width: 100%; border-radius: 30px; font-weight: bold; font-size: 1.1rem; padding: 1rem; background: #4285F4; color: white; text-decoration: none;">Leave 5-Stars on Google</a>
+          </div>
+      </div>
     </div>
   `;
 }

@@ -196,9 +196,12 @@ export function HomePage() {
                 </div>
               `).join('')}
               
-              <a href="/contact" class="btn btn-outline" style="text-align: center; margin-top: 0.5rem; border-radius: 30px;">
-                See All Reviews & Get Directions →
+              <a href="/contact" class="btn btn-outline" style="text-align: center; margin-top: 0.5rem; border-radius: 30px; margin-bottom: 0.5rem;">
+                Get Directions to Salon →
               </a>
+              <button onclick="document.getElementById('home-review-modal').style.display='flex'" class="btn btn-primary" style="text-align: center; border-radius: 30px; background: var(--c-sage); color: white; cursor: pointer; border: none; font-weight: bold; padding: 0.8rem;">
+                ⭐ Rate Your Stylist & Leave a Review
+              </button>
             </div>
           </div>
         </div>
@@ -214,5 +217,49 @@ export function HomePage() {
       </section>
 
     </div>
+
+    <!-- 8. Dynamic Review Modal for Homepage -->
+    <div id="home-review-modal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 9999; align-items: center; justify-content: center; backdrop-filter: blur(4px);">
+        <div style="background: white; border-radius: 16px; padding: 2.5rem; max-width: 450px; width: 90%; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.2); position: relative;">
+            <button onclick="document.getElementById('home-review-modal').style.display='none'" style="position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #888;">&times;</button>
+            <h3 style="margin-bottom: 1rem; color: var(--c-charcoal);">Rate Your Experience</h3>
+            <p style="color: #666; font-size: 0.95rem; margin-bottom: 1.5rem;">Did you love your service at Hair Symmetry? Help us grow by leaving a 5-star review for your stylist on Google!</p>
+            
+            <div style="background: #f8f9fa; padding: 1rem; border-radius: 12px; margin-bottom: 1.5rem; display: inline-block;">
+                <!-- Placeholder for dynamic QR code; using a Google Maps Review Link QR placeholder -->
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://g.page/r/HairSymmetryWexford/review" alt="Scan to Review" style="width: 150px; height: 150px; display: block; margin: 0 auto; border-radius: 8px; border: 1px solid #ddd;" />
+                <span style="font-size: 0.8rem; color: #888; display: block; margin-top: 0.5rem; font-weight: 500;">Scan with phone camera</span>
+            </div>
+
+            <p style="font-size: 0.85rem; font-style: italic; color: #777; margin-bottom: 1.5rem;">"We suggest mentioning your stylist's name so they get the credit they deserve!"</p>
+
+            <a href="https://g.page/r/HairSymmetryWexford/review" target="_blank" onclick="document.getElementById('home-review-modal').style.display='none'" class="btn btn-primary" style="display: block; width: 100%; border-radius: 30px; font-weight: bold; font-size: 1.1rem; padding: 1rem; background: #4285F4; color: white;">Leave 5-Stars on Google</a>
+        </div>
+    </div>
+
+    <!-- 9. Delayed "Save to Favorites" Popup -->
+    <div id="bookmark-popup" style="transform: translateY(150%); transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: fixed; bottom: 2rem; right: 2rem; background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 8px 30px rgba(0,0,0,0.15); z-index: 9998; width: 320px; border-left: 4px solid var(--c-sage);">
+        <button onclick="document.getElementById('bookmark-popup').style.transform='translateY(150%)'; localStorage.setItem('hs_bookmarked', 'true');" style="position: absolute; top: 0.5rem; right: 0.5rem; background: none; border: none; font-size: 1.2rem; cursor: pointer; color: #aaa;">&times;</button>
+        <h4 style="margin: 0 0 0.5rem; color: var(--c-charcoal); font-size: 1.1rem;">🔖 Don't lose us!</h4>
+        <p style="margin: 0; font-size: 0.85rem; color: #666; line-height: 1.5;">Press <strong>Ctrl+D</strong> (or <strong>Cmd+D</strong> on Mac) to save Hair Symmetry to your favorites for easy access next time.</p>
+    </div>
+
+    <script>
+        // 10-second delay for Bookmark Popup
+        setTimeout(() => {
+            const hasSeenBookmark = localStorage.getItem('hs_bookmarked');
+            if (!hasSeenBookmark) {
+                const popup = document.getElementById('bookmark-popup');
+                if (popup) {
+                    popup.style.transform = 'translateY(0)';
+                    // Auto-hide after 15 seconds
+                    setTimeout(() => {
+                        popup.style.transform = 'translateY(150%)';
+                        localStorage.setItem('hs_bookmarked', 'true'); // don't show again this session
+                    }, 15000);
+                }
+            }
+        }, 10000);
+    </script>
   `;
 }

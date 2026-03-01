@@ -261,9 +261,8 @@ export function ContactPage() {
                     <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin: 1rem 0;">What Our Community Says</h2>
                     <div style="display: inline-flex; align-items: center; gap: 0.75rem; margin-top: 0.5rem; background: white; padding: 0.75rem 1.5rem; border-radius: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.06);">
                         <img src="https://www.google.com/favicon.ico" alt="Google" style="width: 20px;" />
-                        <span style="font-size: 1rem; font-weight: bold;">4.7</span>
-                        <span style="color: #f4b400; font-size: 1.1rem;">★★★★☆</span>
-                        <span style="color: #888; font-size: 0.9rem;">58 reviews on Google</span>
+                        <span style="color: #f4b400; font-size: 1.2rem; letter-spacing: 2px;">★★★★★</span>
+                        <span style="color: #444; font-size: 1rem; font-weight: bold;">56 5-Star Reviews</span>
                     </div>
                 </div>
                 

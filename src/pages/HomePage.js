@@ -54,8 +54,8 @@ export function HomePage() {
       <section class="social-proof-strip">
         <div class="container proof-metrics">
           <div class="proof-item">
-            <span class="star-rating">★★★★★</span>
-            <span><span style="color: #f4b400;">★★★★☆</span> 4.7/5 from 58 Google Reviews</span>
+            <span class="star-rating" style="color:#f4b400; font-size:1.1rem; letter-spacing:2px;">★★★★★</span>
+            <span>56 5-Star Google Reviews</span>
           </div>
           <div class="proof-item">📅 Serving Wexford Since 1982</div>
           <div class="proof-item">🌿 Certified Eco-Conscious</div>
@@ -155,9 +155,8 @@ export function HomePage() {
             <h2>Wexford's Most Trusted Salon</h2>
             <div style="display: inline-flex; align-items: center; gap: 0.6rem; margin-top: 0.75rem; background: #fff; padding: 0.6rem 1.2rem; border-radius: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.06);">
               <img src="https://www.google.com/favicon.ico" alt="Google" style="width: 18px;" />
-              <span style="font-weight: bold;">4.7</span>
-              <span style="color: #f4b400;">★★★★★</span>
-              <span style="color: #888; font-size: 0.85rem;">58 Google Reviews</span>
+              <span style="color: #f4b400; font-size: 1.1rem; letter-spacing: 2px;">★★★★★</span>
+              <span style="color: #444; font-weight: bold; font-size: 0.9rem;">56 5-Star Google Reviews</span>
             </div>
           </div>
 
